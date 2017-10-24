@@ -76,7 +76,7 @@ public class MainFrame2 extends JFrame {
         jpn1.add(jbt1);
         jpn1.add(jbt2);
         for(int i=0;i<6;i++){
-        jlbs[i]=new JLabel("");
+        jlbs[i]=new JLabel("0");
             jpn.add(jlbs[i]);
 
         }
@@ -107,7 +107,7 @@ public class MainFrame2 extends JFrame {
                 }
                 j++;
             }
-            if (flag) {
+            if (flag=true) {
                 jlbs[i].setText(Integer.toString(data[i]));
                 i++;
             }
