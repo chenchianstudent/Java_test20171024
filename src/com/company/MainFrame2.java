@@ -75,7 +75,12 @@ public class MainFrame2 extends JFrame {
         jifcp.add(jpn1, BorderLayout.SOUTH);
         jpn1.add(jbt1);
         jpn1.add(jbt2);
-        
+        for(int i=0;i<6;i++){
+        jlbs[i]=new JLabel("");
+            jpn.add(jlbs[i]);
+
+        }
+
         jbt2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

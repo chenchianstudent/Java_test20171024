@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74e70c8d-9ae1-41be-8f04-ff5b87184899" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/MainFrame.java" afterPath="$PROJECT_DIR$/src/com/company/MainFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ex20171024/com/company/MainFrame2$4.class" afterPath="$PROJECT_DIR$/out/production/ex20171024/com/company/MainFrame2$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ex20171024/com/company/MainFrame2$5.class" afterPath="$PROJECT_DIR$/out/production/ex20171024/com/company/MainFrame2$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ex20171024/com/company/MainFrame2.class" afterPath="$PROJECT_DIR$/out/production/ex20171024/com/company/MainFrame2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/MainFrame2.java" afterPath="$PROJECT_DIR$/src/com/company/MainFrame2.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -44,18 +47,18 @@
       <file leaf-file-name="MainFrame2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/MainFrame2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="77" column="8" lean-forward="false" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
+            <state relative-caret-position="49">
+              <caret line="76" column="23" lean-forward="true" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1671#1866#0" expanded="true" />
                 <element signature="e#1865#1866#0" expanded="true" />
                 <element signature="e#2168#2169#0" expanded="true" />
                 <element signature="e#2214#2215#0" expanded="true" />
-                <element signature="e#3016#3017#0" expanded="true" />
-                <element signature="e#3062#3063#0" expanded="true" />
-                <element signature="e#3207#3208#0" expanded="true" />
-                <element signature="e#3263#3264#0" expanded="true" />
+                <element signature="e#3111#3112#0" expanded="true" />
+                <element signature="e#3157#3158#0" expanded="true" />
+                <element signature="e#3302#3303#0" expanded="true" />
+                <element signature="e#3358#3359#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -277,18 +280,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/MainFrame2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="77" column="8" lean-forward="false" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
+        <state relative-caret-position="49">
+          <caret line="76" column="23" lean-forward="true" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1671#1866#0" expanded="true" />
             <element signature="e#1865#1866#0" expanded="true" />
             <element signature="e#2168#2169#0" expanded="true" />
             <element signature="e#2214#2215#0" expanded="true" />
-            <element signature="e#3016#3017#0" expanded="true" />
-            <element signature="e#3062#3063#0" expanded="true" />
-            <element signature="e#3207#3208#0" expanded="true" />
-            <element signature="e#3263#3264#0" expanded="true" />
+            <element signature="e#3111#3112#0" expanded="true" />
+            <element signature="e#3157#3158#0" expanded="true" />
+            <element signature="e#3302#3303#0" expanded="true" />
+            <element signature="e#3358#3359#0" expanded="true" />
           </folding>
         </state>
       </provider>
