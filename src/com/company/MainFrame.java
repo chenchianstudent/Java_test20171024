@@ -21,31 +21,31 @@ public class MainFrame extends JFrame {
     }
 
     private void init() {
-        screenW=dim.width;
-        screenH=dim.height;
-        this.setBounds(screenW/2-frmW/2, screenH/2-frmH/2, frmW, frmH);
-        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        cp = this.getContentPane();
-        cp.setLayout(new GridLayout(3, 2, 3, 1));
-        lab1.setHorizontalAlignment(JLabel.RIGHT);
-        lab2.setHorizontalAlignment(JLabel.RIGHT);
-        cp.add(lab1);
-        cp.add(tf1);
-        cp.add(lab2);
-        cp.add(tf2);
-        cp.add(bt1);
-        cp.add(bt2);
-        bt1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
-        bt2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(tf1.getText().equals("h304")&&new String(tf2.getPassword()).equals("23323456")){
-                   MainFrame2 mf2=new MainFrame2(MainFrame.this);
+                        screenW=dim.width;
+                        screenH=dim.height;
+                        this.setBounds(screenW/2-frmW/2, screenH/2-frmH/2, frmW, frmH);
+                        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                        cp = this.getContentPane();
+                        cp.setLayout(new GridLayout(3, 2, 3, 1));
+                        lab1.setHorizontalAlignment(JLabel.RIGHT);
+                        lab2.setHorizontalAlignment(JLabel.RIGHT);
+                        cp.add(lab1);
+                        cp.add(tf1);
+                        cp.add(lab2);
+                        cp.add(tf2);
+                        cp.add(bt1);
+                        cp.add(bt2);
+                        bt1.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                System.exit(0);
+                            }
+                        });
+                        bt2.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                if(tf1.getText().equals("h304")&&new String(tf2.getPassword()).equals("23323456")){
+                                    MainFrame2 mf2=new MainFrame2(MainFrame.this);
                     //MainFrame2 mf2=new MainFrame2();
                     mf2.setVisible(true);
                     MainFrame.this.setVisible(false);
@@ -55,5 +55,9 @@ public class MainFrame extends JFrame {
             }
         });
 
+    }
+    public void reset(){
+     lab1.setText(" ");
+     lab2.setText(" ");
     }
 }
