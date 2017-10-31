@@ -29,6 +29,17 @@ public class MainFrame2 extends JFrame {
     private Random rnd = new Random(System.currentTimeMillis());
     private JButton jbt1 = new JButton("Close");
     private JButton jbt2 = new JButton("Generate");
+    private JPanel jpanel1 = new JPanel(new GridLayout(2, 3, 5, 5));
+    private JMenuItem jmiSetFont = new JMenuItem("Font");
+    private String[] options = {"PLAIN", "BOLD", "ITALIC", "BOLD+ITALIC"};
+    private JComboBox jcbFstyle = new JComboBox(options);
+    private JLabel jlbfamily = new JLabel("Family");
+    private JLabel jlbstyle = new JLabel("Style");
+    private JLabel jlbsize = new JLabel("Size");
+    private JTextField jtfFamily = new JTextField("poi");
+    private JTextField jtfStyle = new JTextField("PLAIN");
+    private JTextField jtfSize = new JTextField("12");
+
     public MainFrame mframe = new MainFrame();
 
     public MainFrame2(MainFrame mf) {
@@ -54,6 +65,7 @@ public class MainFrame2 extends JFrame {
         jmb.add(jm4);
         jm1.add(jmife);
         jm3.add(jmigl);
+        jm2.add(jmiSetFont);
         jmife.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -75,10 +87,9 @@ public class MainFrame2 extends JFrame {
         jifcp.add(jpn1, BorderLayout.SOUTH);
         jpn1.add(jbt1);
         jpn1.add(jbt2);
-        for(int i=0;i<6;i++){
-        jlbs[i]=new JLabel("0");
+        for (int i = 0; i < 6; i++) {
+            jlbs[i] = new JLabel("0");
             jpn.add(jlbs[i]);
-
         }
 
         jbt2.addActionListener(new ActionListener() {
@@ -93,6 +104,43 @@ public class MainFrame2 extends JFrame {
                 jInternalFrame.dispose();
             }
         });
+        jpanel1.add(jlbfamily);
+        jpanel1.add(jlbstyle);
+        jpanel1.add(jlbsize);
+        jpanel1.add(jtfFamily);
+        jpanel1.add(jcbFstyle);
+        jpanel1.add(jtfSize);
+
+        jmiSetFont.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int result = JOptionPane.showConfirmDialog(
+                        MainFrame2.this,
+                        jpanel1,
+                        "Font Setting",
+                        JOptionPane.OK_CANCEL_OPTION);
+                jcbFstyle.setEditable(true);
+                jcbFstyle.addActionListener(this);
+                int fontStyle=0;
+                switch (jcbFstyle.getSelectedIndex()){
+                    case 0:
+                        fontStyle=Font.PLAIN;
+                        break;
+                    case 1:
+                        fontStyle=Font.BOLD;
+                        break;
+                    case 2:
+                        fontStyle=Font.ITALIC;
+                        break;
+                    case 3:
+                        fontStyle=Font.BOLD+Font.ITALIC;
+                        break;
+                }
+                if(result==JOptionPane.OK_OPTION){
+                   UIManager.put("Menu.font",new Font(jtfFamily.getText(),fontStyle,Integer.parseInt(jtfSize.getText())));
+                }
+            }
+        });
     }
 
     private void lotoGenerate() {
@@ -101,13 +149,13 @@ public class MainFrame2 extends JFrame {
             data[i] = rnd.nextInt(42) + 1;
             int j = 0;
             boolean flag = true;
-            while (j < 1 && flag) {
+            while (j < i && flag) {
                 if (data[i] == data[j]) {
                     flag = false;
                 }
                 j++;
             }
-            if (flag=true) {
+            if (flag) {
                 jlbs[i].setText(Integer.toString(data[i]));
                 i++;
             }
