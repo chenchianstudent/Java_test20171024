@@ -44,16 +44,16 @@ public class MainFrame2 extends JFrame {
     private JTextField jtfFamily = new JTextField("Hand Me Down S (BRK)");
     private JTextField jtfStyle = new JTextField("PLAIN");
     private JTextField jtfSize = new JTextField("12");
-    private FileChooser jfc = new FileChooser();
+    private JFileChooser jfc = new JFileChooser();
     private JInternalFrame JIFAddcategory = new JInternalFrame();
     private Container jIFAddcategoryCP;
     private JMenuBar jIFAddcategoryJmb = new JMenuBar();
     private JMenuItem jmiAddCategory = new JMenuItem("Category");
-    private JMenu jmData = new JMenu("Data");
-    private JMenu jmLoad = new JMenu("Load");
-    private JMenu jmNew = new JMenu("New");
-    private JMenu jmClose = new JMenu("Close");
-    private JTextField jta = new JTextField();
+    private JMenuItem jmData = new JMenuItem("Data");
+    private JMenuItem jmLoad = new JMenuItem("Load");
+    private JMenuItem jmNew = new JMenuItem("New");
+    private JMenuItem jmClose = new JMenuItem("Close");
+    private JTextArea jta = new JTextArea();
     private JScrollPane jsp = new JScrollPane(jta);
 
     public MainFrame mframe = new MainFrame();
@@ -179,22 +179,22 @@ public class MainFrame2 extends JFrame {
         jmLoad.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            if(jfc.showOpenDialog(null)==JFileChooser.APPROVE_OPTION){
-                try{
-                    File infile=jfc.getSelectedFile();
-                    BufferedReader br=new BufferedReader(new FileReader(infile));
-                    System.out.println("FileName:"+infile.getName());
-                    String str="";
-                    while ((str=br.readLine())!=null){
-                        jta.append(str+"\n");
+                if (jfc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+                    try {
+                        File infile = jfc.getSelectedFile();
+                        BufferedReader br = new BufferedReader(new FileReader(infile));
+                        System.out.println("FileName:" + infile.getName());
+                        String str = "";
+                        while ((str = br.readLine()) != null) {
+                            jta.append(str+"\n");
+                        }
+                        System.out.println("Read file Finished");
+
+                    } catch (Exception ioe) {
+                        JOptionPane.showMessageDialog(null, "Error" + ioe.toString());
                     }
 
-
-                }catch (Exception ioe){
-                   JOptionPane.showMessageDialog(null,"Error"+ioe.toString());
                 }
-
-            }
             }
         });
     }
