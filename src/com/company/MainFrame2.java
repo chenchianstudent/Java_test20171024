@@ -8,7 +8,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.util.Random;
 
 public class MainFrame2 extends JFrame {
@@ -174,17 +176,27 @@ public class MainFrame2 extends JFrame {
         jmData.add(jmNew);
         jmData.add(jmClose);
         jdp.add(JIFAddcategory);
-       /* jmLoad.addActionListener(new ActionListener() {
+        jmLoad.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
             if(jfc.showOpenDialog(null)==JFileChooser.APPROVE_OPTION){
                 try{
-                    File infile=jfc.getSelectedExtensionFilter()
+                    File infile=jfc.getSelectedFile();
+                    BufferedReader br=new BufferedReader(new FileReader(infile));
+                    System.out.println("FileName:"+infile.getName());
+                    String str="";
+                    while ((str=br.readLine())!=null){
+                        jta.append(str+"\n");
+                    }
+
+
+                }catch (Exception ioe){
+                   JOptionPane.showMessageDialog(null,"Error"+ioe.toString());
                 }
 
             }
             }
-        });*/
+        });
     }
 
     private void lotoGenerate() {
