@@ -1,11 +1,14 @@
 package com.company;
 
+import javafx.stage.FileChooser;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
 import java.util.Random;
 
 public class MainFrame2 extends JFrame {
@@ -36,9 +39,20 @@ public class MainFrame2 extends JFrame {
     private JLabel jlbfamily = new JLabel("Family");
     private JLabel jlbstyle = new JLabel("Style");
     private JLabel jlbsize = new JLabel("Size");
-    private JTextField jtfFamily = new JTextField("poi");
+    private JTextField jtfFamily = new JTextField("Hand Me Down S (BRK)");
     private JTextField jtfStyle = new JTextField("PLAIN");
     private JTextField jtfSize = new JTextField("12");
+    private FileChooser jfc = new FileChooser();
+    private JInternalFrame JIFAddcategory = new JInternalFrame();
+    private Container jIFAddcategoryCP;
+    private JMenuBar jIFAddcategoryJmb = new JMenuBar();
+    private JMenuItem jmiAddCategory = new JMenuItem("Category");
+    private JMenu jmData = new JMenu("Data");
+    private JMenu jmLoad = new JMenu("Load");
+    private JMenu jmNew = new JMenu("New");
+    private JMenu jmClose = new JMenu("Close");
+    private JTextField jta = new JTextField();
+    private JScrollPane jsp = new JScrollPane(jta);
 
     public MainFrame mframe = new MainFrame();
 
@@ -66,6 +80,7 @@ public class MainFrame2 extends JFrame {
         jm1.add(jmife);
         jm3.add(jmigl);
         jm2.add(jmiSetFont);
+        jm1.add(jmiAddCategory);
         jmife.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -121,26 +136,55 @@ public class MainFrame2 extends JFrame {
                         JOptionPane.OK_CANCEL_OPTION);
                 jcbFstyle.setEditable(true);
                 jcbFstyle.addActionListener(this);
-                int fontStyle=0;
-                switch (jcbFstyle.getSelectedIndex()){
+                int fontStyle = 0;
+                switch (jcbFstyle.getSelectedIndex()) {
                     case 0:
-                        fontStyle=Font.PLAIN;
+                        fontStyle = Font.PLAIN;
                         break;
                     case 1:
-                        fontStyle=Font.BOLD;
+                        fontStyle = Font.BOLD;
                         break;
                     case 2:
-                        fontStyle=Font.ITALIC;
+                        fontStyle = Font.ITALIC;
                         break;
                     case 3:
-                        fontStyle=Font.BOLD+Font.ITALIC;
+                        fontStyle = Font.BOLD + Font.ITALIC;
                         break;
                 }
-                if(result==JOptionPane.OK_OPTION){
-                   UIManager.put("Menu.font",new Font(jtfFamily.getText(),fontStyle,Integer.parseInt(jtfSize.getText())));
+                if (result == JOptionPane.OK_OPTION) {
+                    UIManager.put("Menu.font", new Font(jtfFamily.getText(), fontStyle, Integer.parseInt(jtfSize.getText())));
+
                 }
             }
         });
+        jmiAddCategory.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JIFAddcategory.setVisible(true);
+            }
+        });
+        jIFAddcategoryCP = JIFAddcategory.getContentPane();
+        jIFAddcategoryCP.setLayout(new BorderLayout(5, 5));
+        jIFAddcategoryCP.add(jsp, BorderLayout.CENTER);
+        JIFAddcategory.setBounds(0, 0, 500, 500);
+        JIFAddcategory.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        JIFAddcategory.setJMenuBar(jIFAddcategoryJmb);
+        jIFAddcategoryJmb.add(jmData);
+        jmData.add(jmLoad);
+        jmData.add(jmNew);
+        jmData.add(jmClose);
+        jdp.add(JIFAddcategory);
+       /* jmLoad.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            if(jfc.showOpenDialog(null)==JFileChooser.APPROVE_OPTION){
+                try{
+                    File infile=jfc.getSelectedExtensionFilter()
+                }
+
+            }
+            }
+        });*/
     }
 
     private void lotoGenerate() {
