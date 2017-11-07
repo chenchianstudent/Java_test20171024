@@ -41,7 +41,7 @@ public class MainFrame2 extends JFrame {
     private JLabel jlbfamily = new JLabel("Family");
     private JLabel jlbstyle = new JLabel("Style");
     private JLabel jlbsize = new JLabel("Size");
-    private JTextField jtfFamily = new JTextField("Hand Me Down S (BRK)");
+    private JTextField jtfFamily = new JTextField("Hand Me Down S (BRK)");//字型
     private JTextField jtfStyle = new JTextField("PLAIN");
     private JTextField jtfSize = new JTextField("12");
     private JFileChooser jfc = new JFileChooser();
